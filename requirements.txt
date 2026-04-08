@@ -1,0 +1,11 @@
+kaggle
+kagglehub
+pandas
+numpy
+scikit-learn
+ruff
+mkdocs
+mkdocs-material
+mlflow
+pytest
+streamlit

@@ -1,0 +1,8 @@
+site_name: Pipeline-CI-CD Docs
+docs_dir: " docs"
+theme:
+  name: material
+nav:
+  - Accueil: 1.md
+  - Web: web.md
+  - Guide Exécution: 2.md

@@ -1,0 +1,9 @@
+site_name: Pipeline-CI-CD
+docs_dir: content
+theme:
+  name: material
+nav:
+  - Accueil: index.md
+  - Dataset: 1.md
+  - Entrainement: 2.md
+  - Déploiement: 3.md

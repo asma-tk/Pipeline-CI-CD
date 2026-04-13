@@ -40,8 +40,8 @@ jobs:
           file: ./backend/dockerfile
           push: true
           tags: |
-            ${{ env.DOCKERHUB_USER }}/pipeline-ci-cd-backend:latest
-            ${{ env.DOCKERHUB_USER }}/pipeline-ci-cd-backend:${{ github.sha }}
+            ${{ env.DOCKERHUB_USER }}/backend:latest
+            ${{ env.DOCKERHUB_USER }}/backend:${{ github.sha }}
 
       - name: Build and push frontend
         uses: docker/build-push-action@v6
@@ -50,5 +50,5 @@ jobs:
           file: ./frontend/dockerfile
           push: true
           tags: |
-            ${{ env.DOCKERHUB_USER }}/pipeline-ci-cd-frontend:latest
-            ${{ env.DOCKERHUB_USER }}/pipeline-ci-cd-frontend:${{ github.sha }}
+            ${{ env.DOCKERHUB_USER }}/frontend:latest
+            ${{ env.DOCKERHUB_USER }}/frontend:${{ github.sha }}

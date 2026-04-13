@@ -12,8 +12,8 @@ jobs:
   dockerhub:
     runs-on: ubuntu-latest
     env:
-      DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USERNAME }}
-      DOCKERHUB_PASS: ${{ secrets.DOCKERHUB_TOKEN }}
+      DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USERNAME != '' && secrets.DOCKERHUB_USERNAME || vars.DOCKERHUB_USERNAME }}
+      DOCKERHUB_PASS: ${{ secrets.DOCKERHUB_TOKEN != '' && secrets.DOCKERHUB_TOKEN || vars.DOCKERHUB_TOKEN }}
 
     steps:
       - name: Checkout
@@ -23,7 +23,7 @@ jobs:
         run: |
           if [ -z "${DOCKERHUB_USER}" ] || [ -z "${DOCKERHUB_PASS}" ]; then
             echo "Missing Docker Hub credentials."
-            echo "Set DOCKERHUB_USERNAME and DOCKERHUB_TOKEN in GitHub Secrets."
+            echo "Set DOCKERHUB_USERNAME and DOCKERHUB_TOKEN in GitHub Secrets (preferred) or Repository Variables."
             exit 1
           fi
 
